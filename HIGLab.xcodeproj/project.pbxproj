@@ -1,0 +1,516 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1E98351B8117354A00A0CA52 /* GaugeStyleExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9A28F03D7CA12F158E3C9E /* GaugeStyleExample.swift */; };
+		4F98DDE524B27A674FB01D06 /* HIGLabApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0827DB2B0C93FC67605BCB2 /* HIGLabApp.swift */; };
+		53A11B77034E8D07A0CB28BC /* GaugeGuidelinesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66ABB54E5353AF14005BB135 /* GaugeGuidelinesView.swift */; };
+		564D8BEC05CB42659B97D446 /* HIGLabApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0827DB2B0C93FC67605BCB2 /* HIGLabApp.swift */; };
+		5723E9DA132F181015F18DEB /* GaugeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7455A07F0EE76EF5E38BE7 /* GaugeScreen.swift */; };
+		6D631A5E2A609BEAA1A838B0 /* LevelIndicatorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265BC1E3F2F211E0B2460A69 /* LevelIndicatorsView.swift */; };
+		6FFBAF792F547E3DA097F24C /* LevelIndicatorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265BC1E3F2F211E0B2460A69 /* LevelIndicatorsView.swift */; };
+		73A0E333F8C07EFCB6D6C86A /* LabComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0F49F7759264D083B7CF8F /* LabComponents.swift */; };
+		9D20E34E808E28AEE713EE42 /* GaugeScenariosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F575774725AAC8FE7C02BC /* GaugeScenariosView.swift */; };
+		BF434D3C98AB237B6C56C082 /* GaugeScenariosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F575774725AAC8FE7C02BC /* GaugeScenariosView.swift */; };
+		DDB8655D487B78822C0ED549 /* GaugeStyleExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9A28F03D7CA12F158E3C9E /* GaugeStyleExample.swift */; };
+		E571B8ECB981FE8C76F5FF60 /* LabComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0F49F7759264D083B7CF8F /* LabComponents.swift */; };
+		E6272C7CE4E3CCDE2AA8ACAC /* GaugeGuidelinesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66ABB54E5353AF14005BB135 /* GaugeGuidelinesView.swift */; };
+		FD152508BCD92C4F6078D732 /* GaugeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7455A07F0EE76EF5E38BE7 /* GaugeScreen.swift */; };
+		FD8CB3AF1419FF20898E84FA /* HIGLabUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3141876770BF8CA548F4AAF4 /* HIGLabUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D6E50A2563C364ABFA8F0086 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1CF5B5110FC049D9A105750D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0117CADFCD699245DAF3CD46;
+			remoteInfo = HIGLab;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0C0F49F7759264D083B7CF8F /* LabComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabComponents.swift; sourceTree = "<group>"; };
+		1D9A28F03D7CA12F158E3C9E /* GaugeStyleExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaugeStyleExample.swift; sourceTree = "<group>"; };
+		265BC1E3F2F211E0B2460A69 /* LevelIndicatorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelIndicatorsView.swift; sourceTree = "<group>"; };
+		3141876770BF8CA548F4AAF4 /* HIGLabUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HIGLabUITests.swift; sourceTree = "<group>"; };
+		3501C08F87800DFBAE7D3DDC /* HIGLab.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = HIGLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CCCC389748BD01C3EF7C0A1 /* HIGLabUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = HIGLabUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		66ABB54E5353AF14005BB135 /* GaugeGuidelinesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaugeGuidelinesView.swift; sourceTree = "<group>"; };
+		AE7455A07F0EE76EF5E38BE7 /* GaugeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaugeScreen.swift; sourceTree = "<group>"; };
+		B6F575774725AAC8FE7C02BC /* GaugeScenariosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaugeScenariosView.swift; sourceTree = "<group>"; };
+		D0827DB2B0C93FC67605BCB2 /* HIGLabApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HIGLabApp.swift; sourceTree = "<group>"; };
+		D2B98E29DE2F010212E02D10 /* HIGLabMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HIGLabMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		258CD6A6AD92BB723B3D6638 /* HIGLabUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3141876770BF8CA548F4AAF4 /* HIGLabUITests.swift */,
+			);
+			path = HIGLabUITests;
+			sourceTree = "<group>";
+		};
+		3B8FE95066A6AF6DCE2E90AA /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				0C0F49F7759264D083B7CF8F /* LabComponents.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		56D95B5E2EA6317C8DDC4672 /* HIGLab */ = {
+			isa = PBXGroup;
+			children = (
+				D0827DB2B0C93FC67605BCB2 /* HIGLabApp.swift */,
+				3B8FE95066A6AF6DCE2E90AA /* Components */,
+				D8BFE8AE607E1971B8A86DA0 /* Gauges */,
+			);
+			path = HIGLab;
+			sourceTree = "<group>";
+		};
+		930FFE7E3E1CCFFFA4DC15EB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3501C08F87800DFBAE7D3DDC /* HIGLab.app */,
+				D2B98E29DE2F010212E02D10 /* HIGLabMac.app */,
+				4CCCC389748BD01C3EF7C0A1 /* HIGLabUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D8BFE8AE607E1971B8A86DA0 /* Gauges */ = {
+			isa = PBXGroup;
+			children = (
+				66ABB54E5353AF14005BB135 /* GaugeGuidelinesView.swift */,
+				B6F575774725AAC8FE7C02BC /* GaugeScenariosView.swift */,
+				AE7455A07F0EE76EF5E38BE7 /* GaugeScreen.swift */,
+				1D9A28F03D7CA12F158E3C9E /* GaugeStyleExample.swift */,
+				265BC1E3F2F211E0B2460A69 /* LevelIndicatorsView.swift */,
+			);
+			path = Gauges;
+			sourceTree = "<group>";
+		};
+		DA806873B10D1D8751E9F61B = {
+			isa = PBXGroup;
+			children = (
+				56D95B5E2EA6317C8DDC4672 /* HIGLab */,
+				258CD6A6AD92BB723B3D6638 /* HIGLabUITests */,
+				930FFE7E3E1CCFFFA4DC15EB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0117CADFCD699245DAF3CD46 /* HIGLab */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 28C8A8135E67470FAAAA83C4 /* Build configuration list for PBXNativeTarget "HIGLab" */;
+			buildPhases = (
+				508AA8FFF83728CD72E2975A /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HIGLab;
+			packageProductDependencies = (
+			);
+			productName = HIGLab;
+			productReference = 3501C08F87800DFBAE7D3DDC /* HIGLab.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4B670A9D91E7DA019DD3F25E /* HIGLabMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7CED3662F493B51204E16A13 /* Build configuration list for PBXNativeTarget "HIGLabMac" */;
+			buildPhases = (
+				81C66A89974CCD524D866AFC /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HIGLabMac;
+			packageProductDependencies = (
+			);
+			productName = HIGLabMac;
+			productReference = D2B98E29DE2F010212E02D10 /* HIGLabMac.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F2C77B6055F1D838C54A1049 /* HIGLabUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 189FFF8E259EE84451D96930 /* Build configuration list for PBXNativeTarget "HIGLabUITests" */;
+			buildPhases = (
+				A1477B882727324B8C224F37 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B96284F41B026689CE41A45D /* PBXTargetDependency */,
+			);
+			name = HIGLabUITests;
+			packageProductDependencies = (
+			);
+			productName = HIGLabUITests;
+			productReference = 4CCCC389748BD01C3EF7C0A1 /* HIGLabUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1CF5B5110FC049D9A105750D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					F2C77B6055F1D838C54A1049 = {
+						TestTargetID = 0117CADFCD699245DAF3CD46;
+					};
+				};
+			};
+			buildConfigurationList = 57E462F7A97886AA8659137C /* Build configuration list for PBXProject "HIGLab" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = DA806873B10D1D8751E9F61B;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 930FFE7E3E1CCFFFA4DC15EB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0117CADFCD699245DAF3CD46 /* HIGLab */,
+				4B670A9D91E7DA019DD3F25E /* HIGLabMac */,
+				F2C77B6055F1D838C54A1049 /* HIGLabUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		508AA8FFF83728CD72E2975A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53A11B77034E8D07A0CB28BC /* GaugeGuidelinesView.swift in Sources */,
+				9D20E34E808E28AEE713EE42 /* GaugeScenariosView.swift in Sources */,
+				5723E9DA132F181015F18DEB /* GaugeScreen.swift in Sources */,
+				1E98351B8117354A00A0CA52 /* GaugeStyleExample.swift in Sources */,
+				4F98DDE524B27A674FB01D06 /* HIGLabApp.swift in Sources */,
+				73A0E333F8C07EFCB6D6C86A /* LabComponents.swift in Sources */,
+				6D631A5E2A609BEAA1A838B0 /* LevelIndicatorsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		81C66A89974CCD524D866AFC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6272C7CE4E3CCDE2AA8ACAC /* GaugeGuidelinesView.swift in Sources */,
+				BF434D3C98AB237B6C56C082 /* GaugeScenariosView.swift in Sources */,
+				FD152508BCD92C4F6078D732 /* GaugeScreen.swift in Sources */,
+				DDB8655D487B78822C0ED549 /* GaugeStyleExample.swift in Sources */,
+				564D8BEC05CB42659B97D446 /* HIGLabApp.swift in Sources */,
+				E571B8ECB981FE8C76F5FF60 /* LabComponents.swift in Sources */,
+				6FFBAF792F547E3DA097F24C /* LevelIndicatorsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1477B882727324B8C224F37 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD8CB3AF1419FF20898E84FA /* HIGLabUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B96284F41B026689CE41A45D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0117CADFCD699245DAF3CD46 /* HIGLab */;
+			targetProxy = D6E50A2563C364ABFA8F0086 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		533CE0E7F20DF18245430A2D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_APP_SANDBOX = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "HIG Lab";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.higlab.mac;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		5EB0E617602A71694C1917D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.higlab.HIGLabUITests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HIGLab;
+			};
+			name = Debug;
+		};
+		6049BA4F2F43C87F75124CB6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		680F58485620578F802E215C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_KEY_CFBundleDisplayName = "HIG Lab";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.higlab;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A4DC359C885247B49DF0AC41 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_APP_SANDBOX = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "HIG Lab";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.higlab.mac;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		B13A481FF50FC8AB2CE02EAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.higlab.HIGLabUITests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HIGLab;
+			};
+			name = Release;
+		};
+		CC679C55123AF1BA23B1C168 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_KEY_CFBundleDisplayName = "HIG Lab";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.higlab;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E49B8CBEC370038F380CA859 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		189FFF8E259EE84451D96930 /* Build configuration list for PBXNativeTarget "HIGLabUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5EB0E617602A71694C1917D6 /* Debug */,
+				B13A481FF50FC8AB2CE02EAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		28C8A8135E67470FAAAA83C4 /* Build configuration list for PBXNativeTarget "HIGLab" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				680F58485620578F802E215C /* Debug */,
+				CC679C55123AF1BA23B1C168 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		57E462F7A97886AA8659137C /* Build configuration list for PBXProject "HIGLab" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6049BA4F2F43C87F75124CB6 /* Debug */,
+				E49B8CBEC370038F380CA859 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		7CED3662F493B51204E16A13 /* Build configuration list for PBXNativeTarget "HIGLabMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				533CE0E7F20DF18245430A2D /* Debug */,
+				A4DC359C885247B49DF0AC41 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1CF5B5110FC049D9A105750D /* Project object */;
+}

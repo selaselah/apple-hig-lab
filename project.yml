@@ -1,0 +1,51 @@
+name: HIGLab
+options:
+  bundleIdPrefix: com.example.higlab
+  deploymentTarget:
+    iOS: '17.0'
+    macOS: '14.0'
+settings:
+  base:
+    SWIFT_VERSION: '5.0'
+    GENERATE_INFOPLIST_FILE: YES
+    MARKETING_VERSION: '1.0'
+    CURRENT_PROJECT_VERSION: 1
+targets:
+  HIGLab:
+    type: application
+    platform: iOS
+    sources: [HIGLab]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.example.higlab
+        TARGETED_DEVICE_FAMILY: '1,2'
+        INFOPLIST_KEY_CFBundleDisplayName: HIG Lab
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: 'UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight'
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone: 'UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight'
+  HIGLabMac:
+    type: application
+    platform: macOS
+    sources: [HIGLab]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.example.higlab.mac
+        INFOPLIST_KEY_CFBundleDisplayName: HIG Lab
+        ENABLE_APP_SANDBOX: YES
+  HIGLabUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources: [HIGLabUITests]
+    dependencies:
+      - target: HIGLab
+schemes:
+  HIGLab:
+    build:
+      targets:
+        HIGLab: all
+    test:
+      targets: [HIGLabUITests]
+  HIGLabMac:
+    build:
+      targets:
+        HIGLabMac: all
