@@ -56,4 +56,26 @@ final class HIGLabUITests: XCTestCase {
         app.buttons["battery-full"].tap()
         XCTAssertEqual(app.staticTexts["battery-status"].label, "电量充足")
     }
+
+    func testSystemMoreOpensOverflowTabAndDisappearsWithFourTabs() {
+        let entry = app.buttons["nav-tab-bars"]
+        XCTAssertTrue(entry.waitForExistence(timeout: 10))
+        entry.tap()
+        app.buttons["open-tab-demo"].tap()
+        let more = app.tabBars.buttons["system-more-tab"]
+        XCTAssertTrue(more.waitForExistence(timeout: 5))
+        more.tap()
+        let listScreenshot = XCTAttachment(screenshot: app.screenshot())
+        listScreenshot.name = "Tab Bars - native More list"
+        listScreenshot.lifetime = .keepAlways
+        add(listScreenshot)
+        let downloads = app.tables.cells.containing(.staticText, identifier: "下载").firstMatch
+        XCTAssertTrue(downloads.waitForExistence(timeout: 5))
+        downloads.tap()
+        XCTAssertTrue(app.staticTexts["demo-page-downloads"].waitForExistence(timeout: 5))
+        app.segmentedControls["tab-count"].buttons["4 个"].tap()
+        XCTAssertFalse(more.exists)
+        XCTAssertTrue(app.staticTexts["demo-page-home"].exists)
+        app.buttons["close-tab-demo"].tap()
+    }
 }

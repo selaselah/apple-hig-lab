@@ -34,7 +34,7 @@ enum LabTheme {
     }
 }
 
-enum GaugePage: String, CaseIterable, Identifiable {
+enum GaugePage: String, CaseIterable, Identifiable, Hashable {
     case overview = "概览"
     case styles = "样式图鉴"
     case scenarios = "场景演示"
@@ -53,8 +53,20 @@ enum GaugePage: String, CaseIterable, Identifiable {
     }
 }
 
+enum CatalogPage: Hashable {
+    case gauge(GaugePage)
+    case tabBars
+
+    var documentationURL: URL {
+        switch self {
+        case .gauge: GaugeScreen.higURL
+        case .tabBars: TabBarsScreen.higURL
+        }
+    }
+}
+
 struct CatalogView: View {
-    @State private var selection: GaugePage? = .overview
+    @State private var selection: CatalogPage? = .gauge(.overview)
     @AppStorage("appearance") private var appearance = "system"
 
     var body: some View {
@@ -71,7 +83,7 @@ struct CatalogView: View {
                 }
                 Section("Gauges · 仪表") {
                     ForEach(GaugePage.allCases) { page in
-                        NavigationLink(value: page) {
+                        NavigationLink(value: CatalogPage.gauge(page)) {
                             HStack {
                                 Label(page.rawValue, systemImage: page.symbol)
                                 if page == .levels {
@@ -82,6 +94,13 @@ struct CatalogView: View {
                         .accessibilityIdentifier("nav-\(page.id)")
                     }
                 }
+                Section("Tab Bars · 标签栏") {
+                    NavigationLink(value: CatalogPage.tabBars) {
+                        Label("More · 标签溢出", systemImage: "ellipsis.circle")
+                            .padding(.vertical, 5)
+                    }
+                    .accessibilityIdentifier("nav-tab-bars")
+                }
                 Section {
                     Label("更多 HIG 组件，逐步加入", systemImage: "square.stack.3d.up")
                         .font(.caption).foregroundStyle(.secondary)
@@ -91,7 +110,7 @@ struct CatalogView: View {
             .navigationTitle("组件目录")
             .navigationSplitViewColumnWidth(min: 230, ideal: 250, max: 300)
         } detail: {
-            GaugeScreen(page: selection ?? .overview)
+            detail
                 .toolbar {
                     ToolbarItem(placement: .primaryAction) {
                         Menu {
@@ -101,7 +120,7 @@ struct CatalogView: View {
                                 Text("深色").tag("dark")
                             }
                             Divider()
-                            Link("Apple HIG · Gauges", destination: GaugeScreen.higURL)
+                            Link("Apple HIG · 当前组件", destination: (selection ?? .gauge(.overview)).documentationURL)
                         } label: {
                             Label("外观与文档", systemImage: "circle.lefthalf.filled")
                         }
@@ -110,6 +129,13 @@ struct CatalogView: View {
                 }
         }
         .preferredColorScheme(appearance == "system" ? nil : appearance == "dark" ? .dark : .light)
+    }
+
+    @ViewBuilder private var detail: some View {
+        switch selection ?? .gauge(.overview) {
+        case .gauge(let page): GaugeScreen(page: page)
+        case .tabBars: TabBarsScreen()
+        }
     }
 }
 

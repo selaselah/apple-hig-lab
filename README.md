@@ -2,6 +2,16 @@
 
 可运行的 SwiftUI Xcode 工程，逐步收录 Apple Human Interface Guidelines 的原生组件案例。第一期为 **Gauges**。
 
+## Tab Bars · More
+
+从组件目录进入 **Tab Bars → More · 标签溢出**，打开交互示例。使用真实 `UITabBarController` 的 7 个业务页面，紧凑布局下由系统显示前 4 个标签与 More 列表；可选择「下载、历史、设置」，也可切换 4 / 5 / 7 个标签与当前设备布局，比较是否发生溢出。iPad 常规布局可能在顶部显示全部标签。
+
+案例附完整可复制代码。More 由系统自动生成，没有手动加入 `moreNavigationController`。macOS target 提供平台占位与代码。HIG 建议避免溢出，这个案例用于观察其行为。
+
+已知行为：[iPad 窗口缩放后 More 出现 Edit 的说明](docs/tab-bar-more-edit-resize.md)。已在 iPadOS 27.0 复现，暂不修复。
+
+![iPad 紧凑布局中的系统 More 列表](Screenshots/tab-bars-more-ipad.png)
+
 ## 打开和运行
 
 直接用 Xcode 打开 `HIGLab.xcodeproj`，无需先安装依赖或重新生成工程。
@@ -62,11 +72,14 @@ UI 测试目前面向 iPad 横屏、侧边栏可见的布局。设备名称和 O
 
 已于 2026-10-12 在 iPad Pro 11-inch (M5) / iOS 27.0 完成构建、安装、启动和 3 项 UI 测试；macOS target 构建通过。
 
+2026-10-13 新增 Tab Bars 案例后，4 项 UI 测试全部通过，包含系统 More 自动出现、打开溢出页面以及减少标签后消失；两个平台构建及 Tab Bars 完整代码示例编译检查通过。
+
 ![iPad 概览](Screenshots/gauges-ipad.png)
 
 ## 参考
 
 - [Apple HIG · Gauges](https://developer.apple.com/design/human-interface-guidelines/gauges)
+- [Apple HIG · Tab bars](https://developer.apple.com/design/human-interface-guidelines/tab-bars)
 - [SwiftUI · Gauge](https://developer.apple.com/documentation/swiftui/gauge)
 - [AppKit · NSLevelIndicator](https://developer.apple.com/documentation/appkit/nslevelindicator)
 
