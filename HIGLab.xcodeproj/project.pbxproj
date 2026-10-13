@@ -10,6 +10,7 @@
 		06522761AE1B5A0393B217EA /* TabBarsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E476430698E9468113030D46 /* TabBarsScreen.swift */; };
 		1E98351B8117354A00A0CA52 /* GaugeStyleExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9A28F03D7CA12F158E3C9E /* GaugeStyleExample.swift */; };
 		208FD788B378A2CD658AB3A2 /* TabBarsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E476430698E9468113030D46 /* TabBarsScreen.swift */; };
+		2FA592ABE08A5A9C495B2546 /* BackgroundColorsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2532208753FBC1FB4EAC9F /* BackgroundColorsScreen.swift */; };
 		3601969EE149CE7DC44CFAE5 /* NativeMoreTabDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062B4E3DA6D4E7C63CB02474 /* NativeMoreTabDemo.swift */; };
 		4F98DDE524B27A674FB01D06 /* HIGLabApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0827DB2B0C93FC67605BCB2 /* HIGLabApp.swift */; };
 		53A11B77034E8D07A0CB28BC /* GaugeGuidelinesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66ABB54E5353AF14005BB135 /* GaugeGuidelinesView.swift */; };
@@ -18,6 +19,7 @@
 		6D631A5E2A609BEAA1A838B0 /* LevelIndicatorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265BC1E3F2F211E0B2460A69 /* LevelIndicatorsView.swift */; };
 		6FFBAF792F547E3DA097F24C /* LevelIndicatorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265BC1E3F2F211E0B2460A69 /* LevelIndicatorsView.swift */; };
 		73A0E333F8C07EFCB6D6C86A /* LabComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0F49F7759264D083B7CF8F /* LabComponents.swift */; };
+		8528FD932195D099AC03B925 /* BackgroundColorsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2532208753FBC1FB4EAC9F /* BackgroundColorsScreen.swift */; };
 		9D20E34E808E28AEE713EE42 /* GaugeScenariosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F575774725AAC8FE7C02BC /* GaugeScenariosView.swift */; };
 		BF434D3C98AB237B6C56C082 /* GaugeScenariosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F575774725AAC8FE7C02BC /* GaugeScenariosView.swift */; };
 		DDB8655D487B78822C0ED549 /* GaugeStyleExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9A28F03D7CA12F158E3C9E /* GaugeStyleExample.swift */; };
@@ -52,6 +54,7 @@
 		D0827DB2B0C93FC67605BCB2 /* HIGLabApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HIGLabApp.swift; sourceTree = "<group>"; };
 		D2B98E29DE2F010212E02D10 /* HIGLabMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HIGLabMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E476430698E9468113030D46 /* TabBarsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarsScreen.swift; sourceTree = "<group>"; };
+		FD2532208753FBC1FB4EAC9F /* BackgroundColorsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundColorsScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -75,11 +78,20 @@
 			isa = PBXGroup;
 			children = (
 				D0827DB2B0C93FC67605BCB2 /* HIGLabApp.swift */,
+				7050B0D263FD7BC05CCA3126 /* Colors */,
 				3B8FE95066A6AF6DCE2E90AA /* Components */,
 				D8BFE8AE607E1971B8A86DA0 /* Gauges */,
 				BBD4806A5A782430DB3B3E4B /* TabBars */,
 			);
 			path = HIGLab;
+			sourceTree = "<group>";
+		};
+		7050B0D263FD7BC05CCA3126 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				FD2532208753FBC1FB4EAC9F /* BackgroundColorsScreen.swift */,
+			);
+			path = Colors;
 			sourceTree = "<group>";
 		};
 		930FFE7E3E1CCFFFA4DC15EB /* Products */ = {
@@ -217,6 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FA592ABE08A5A9C495B2546 /* BackgroundColorsScreen.swift in Sources */,
 				53A11B77034E8D07A0CB28BC /* GaugeGuidelinesView.swift in Sources */,
 				9D20E34E808E28AEE713EE42 /* GaugeScenariosView.swift in Sources */,
 				5723E9DA132F181015F18DEB /* GaugeScreen.swift in Sources */,
@@ -233,6 +246,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8528FD932195D099AC03B925 /* BackgroundColorsScreen.swift in Sources */,
 				E6272C7CE4E3CCDE2AA8ACAC /* GaugeGuidelinesView.swift in Sources */,
 				BF434D3C98AB237B6C56C082 /* GaugeScenariosView.swift in Sources */,
 				FD152508BCD92C4F6078D732 /* GaugeScreen.swift in Sources */,

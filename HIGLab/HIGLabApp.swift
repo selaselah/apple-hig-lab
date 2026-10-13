@@ -56,11 +56,13 @@ enum GaugePage: String, CaseIterable, Identifiable, Hashable {
 enum CatalogPage: Hashable {
     case gauge(GaugePage)
     case tabBars
+    case backgroundColors
 
     var documentationURL: URL {
         switch self {
         case .gauge: GaugeScreen.higURL
         case .tabBars: TabBarsScreen.higURL
+        case .backgroundColors: BackgroundColorsScreen.higURL
         }
     }
 }
@@ -101,6 +103,13 @@ struct CatalogView: View {
                     }
                     .accessibilityIdentifier("nav-tab-bars")
                 }
+                Section("Colors · 颜色") {
+                    NavigationLink(value: CatalogPage.backgroundColors) {
+                        Label("背景层级", systemImage: "square.3.layers.3d")
+                            .padding(.vertical, 5)
+                    }
+                    .accessibilityIdentifier("nav-background-colors")
+                }
                 Section {
                     Label("更多 HIG 组件，逐步加入", systemImage: "square.stack.3d.up")
                         .font(.caption).foregroundStyle(.secondary)
@@ -135,6 +144,7 @@ struct CatalogView: View {
         switch selection ?? .gauge(.overview) {
         case .gauge(let page): GaugeScreen(page: page)
         case .tabBars: TabBarsScreen()
+        case .backgroundColors: BackgroundColorsScreen()
         }
     }
 }

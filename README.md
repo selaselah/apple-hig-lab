@@ -12,6 +12,14 @@
 
 ![iPad 紧凑布局中的系统 More 列表](Screenshots/tab-bars-more-ipad.png)
 
+## Colors · 背景层级
+
+从组件目录进入 **Colors → 背景层级**，并排比较普通内容页的 `systemBackground` 系列和分组列表页的 `systemGroupedBackground` 系列。示例标出页面、圆角内容区域、内部区域三个层级，支持切换浅色 / 深色，并附可复制的 SwiftUI 代码。窄窗口下自动改为上下排列；macOS 展示 UIKit 平台说明和代码。
+
+分组页面的整页底色使用 `systemGroupedBackground`，圆角 section 使用 `secondarySystemGroupedBackground`；圆角形状本身不决定使用哪套颜色。
+
+![两套背景层级的浅色对比](Screenshots/background-colors-light-ipad.png)
+
 ## 打开和运行
 
 直接用 Xcode 打开 `HIGLab.xcodeproj`，无需先安装依赖或重新生成工程。
@@ -73,6 +81,8 @@ UI 测试目前面向 iPad 横屏、侧边栏可见的布局。设备名称和 O
 已于 2026-10-12 在 iPad Pro 11-inch (M5) / iOS 27.0 完成构建、安装、启动和 3 项 UI 测试；macOS target 构建通过。
 
 2026-10-13 新增 Tab Bars 案例后，4 项 UI 测试全部通过，包含系统 More 自动出现、打开溢出页面以及减少标签后消失；两个平台构建及 Tab Bars 完整代码示例编译检查通过。
+
+同日新增 Colors 背景层级案例，iOS / macOS 构建通过，已在 iPadOS 27.0 手动验证浅色 / 深色切换。
 
 ![iPad 概览](Screenshots/gauges-ipad.png)
 
