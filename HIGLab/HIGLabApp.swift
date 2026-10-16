@@ -57,12 +57,16 @@ enum CatalogPage: Hashable {
     case gauge(GaugePage)
     case tabBars
     case backgroundColors
+    case darkBackgrounds
+    case vibrancy
 
     var documentationURL: URL {
         switch self {
         case .gauge: GaugeScreen.higURL
         case .tabBars: TabBarsScreen.higURL
         case .backgroundColors: BackgroundColorsScreen.higURL
+        case .darkBackgrounds: DarkBackgroundsScreen.higURL
+        case .vibrancy: VibrancyScreen.higURL
         }
     }
 }
@@ -109,6 +113,16 @@ struct CatalogView: View {
                             .padding(.vertical, 5)
                     }
                     .accessibilityIdentifier("nav-background-colors")
+                    NavigationLink(value: CatalogPage.darkBackgrounds) {
+                        Label("Base / Elevated", systemImage: "square.2.layers.3d")
+                            .padding(.vertical, 5)
+                    }
+                    .accessibilityIdentifier("nav-dark-backgrounds")
+                    NavigationLink(value: CatalogPage.vibrancy) {
+                        Label("Vibrancy · 材质文字", systemImage: "textformat")
+                            .padding(.vertical, 5)
+                    }
+                    .accessibilityIdentifier("nav-vibrancy")
                 }
                 Section {
                     Label("更多 HIG 组件，逐步加入", systemImage: "square.stack.3d.up")
@@ -145,6 +159,8 @@ struct CatalogView: View {
         case .gauge(let page): GaugeScreen(page: page)
         case .tabBars: TabBarsScreen()
         case .backgroundColors: BackgroundColorsScreen()
+        case .darkBackgrounds: DarkBackgroundsScreen()
+        case .vibrancy: VibrancyScreen()
         }
     }
 }

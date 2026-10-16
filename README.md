@@ -20,6 +20,30 @@
 
 ![两套背景层级的浅色对比](Screenshots/background-colors-light-ipad.png)
 
+## Colors · Base / Elevated
+
+从组件目录进入 **Colors → Base / Elevated**。使用浅色 / 深色切换，令并排色板以所选外观、标准对比度分别解析 Base 和 Elevated 下的三个系统背景色；点击「打开主页面与 Sheet 演示」，观察系统在真实呈现环境中的自动调整。主页面和 Sheet 内也可以切换浅色 / 深色，选择会同步回色板；关闭演示后返回目录原有外观。
+
+主页面与 Sheet 复用同一份背景布局，均使用 `systemBackground`、`secondarySystemBackground` 和 `tertiarySystemBackground`，没有覆盖界面层级。页面显示从 UIKit `traitCollection` 读取的实际层级及 `systemBackground` 色值，并附可复制的 SwiftUI 示例。macOS 提供平台说明和代码。
+
+Base / Elevated 是界面呈现层级，与同一界面内部的 primary / secondary / tertiary 背景层级是两个维度。色板只用于受控比较；实际值以运行系统和呈现环境为准。Sheet 外面的页面会被系统遮罩压暗。
+
+2026-10-16：iOS / macOS 构建通过。在 iPad Pro 11-inch (M5) / iPadOS 27.0 手动验证主页面为 Dark · Base（`#000000`），Sheet 为 Dark · Elevated（`#1C1C1E`）。
+
+同日加入浅色切换并验证：主页面为 Light · Base，Sheet 为 Light · Elevated，两者 `systemBackground` 均为 `#FFFFFF`。Sheet 内切换深浅色会同步更新底层页面与实际层级读数。
+
+![同样的系统背景色在主页面与 Sheet 中的区别](Screenshots/dark-backgrounds-sheet-ipad.png)
+
+![浅色模式下层级不同，但系统背景色相同](Screenshots/light-backgrounds-sheet-ipad.png)
+
+## Colors · Vibrancy 材质文字
+
+从 **Colors → Vibrancy · 材质文字** 进入。以真实 SwiftUI `Material` 为背景，对照 `.foregroundStyle(.primary / .secondary / .tertiary / .quaternary)` 与显式不透明灰度颜色，另有 `.red` 文字展示自定义颜色退出 Vibrancy。支持 Light / Dark、暖色 / 冷色 / 多彩背景、Thin / Regular / Thick 材质切换，窄窗口自动上下排列，附完整可复制代码。预览外观只作用于示例区域。
+
+2026-10-16：iOS / macOS 构建通过。在 iPadOS 27.0 验证冷暖背景切换时系统次要文字的色调变化，并检查浅色、深色和材质厚度切换。
+
+![Vibrancy 与显式灰度文字对照](Screenshots/vibrancy-ipad.png)
+
 ## 打开和运行
 
 直接用 Xcode 打开 `HIGLab.xcodeproj`，无需先安装依赖或重新生成工程。
