@@ -44,6 +44,47 @@ Base / Elevated 是界面呈现层级，与同一界面内部的 primary / secon
 
 ![Vibrancy 与显式灰度文字对照](Screenshots/vibrancy-ipad.png)
 
+## App Shortcuts · Siri 提示卡片
+
+从 **App Shortcuts → Siri 提示卡片** 进入。通过 `UIViewRepresentable` 嵌入真实 `SiriTipUIView`，关联 `CaptureIdeaIntent` 与 `HIGLabShortcuts`，由系统显示语音短语及关闭按钮。支持 Automatic / Light / Dark 样式、关闭后重新显示；「记录灵感」按钮执行同一个 Intent，在本地保存次数与最近时间。macOS 展示平台说明和代码。
+
+触发短语为英文 **Capture an idea in HIG Lab**。该例用于观察系统提示，卡片本身不负责录音或识别语音。语音执行需要设备的 Siri 配置支持；也可在快捷指令 App 中找到 HIG Lab 的操作。页面包含可复制的 UIKit、App Intent 和 App Shortcut 示例。
+
+2026-11-02：iOS Simulator 与 macOS 构建通过，并检查生成的 App Intents 元数据。原 iPad / iOS 27.0 runtime 不可用；随后通过 Device Hub 在用户选择的 iPhone 18 Pro / iOS 27.2 安装运行成功（该环境由 Device Hub 提供模拟器界面）。SiriTipUIView 的样式、关闭交互与 Siri 语音执行尚未实测；下方两个新增示例已完成所列运行验证。
+
+## App Shortcuts · Snippet 结果卡片
+
+从 **App Shortcuts → Snippet · 结果卡片** 进入。点击「记录灵感并预览结果」执行 `CaptureIdeaSnippetIntent`，与 Siri 提示卡片的示例共用本地灵感计数。Intent 返回 `ProvidesDialog & ShowsSnippetView`，其中 `IdeaSnippetView` 显示成功状态、累计数量与记录时间。页面包含可复制代码。
+
+App 内展示明确标注的内容预览；它不会自行打开 Siri 浮层。要验证系统展示，打开「快捷指令」侧边目录 → **App → HIG Lab → 记录灵感并显示结果** 直接运行（已实测），也可添加到自己的快捷指令；或使用英文 Siri 短语 **Capture an idea with a snippet in HIG Lab**。不同系统入口决定是否呈现自定义视图；Apple 文档提示 Siri AI 可能不显示 `IntentDialog` / `ShowsSnippetView`。本例为静态结果，不包含交互式 Snippet。
+
+## App Shortcuts · Live Activity 专注倒计时
+
+从 **App Shortcuts → Live Activity · 专注** 进入。选择 1 / 5 / 25 分钟，点击「开始实时活动」，然后锁定设备查看系统卡片。在支持灵动岛的 iPhone 上，返回主屏幕可观察紧凑布局，长按展开；系统在适当场景使用最小布局。iPad 可看锁屏活动，没有 iPhone 的灵动岛。
+
+- **加 1 分钟**：通过 `Activity.update` 更新结束时间；**结束并移除**：通过 `Activity.end` 立即移除。
+- 重新打开 App 会恢复当前活动；点击系统卡片通过 `higlab://live-activity` 返回本页。已有活动时复用，不重复创建。
+- 快捷指令操作 **开始专注倒计时** / 英文短语 **Start a focus timer in HIG Lab** 使用 `LiveActivityIntent`，默认启动五分钟，或恢复已有活动。
+- `HIGLabLiveActivities` 是实际嵌入 App 的 Widget 扩展，包含锁屏及灵动岛紧凑 / 展开 / 最小布局。打开其 Swift 文件可在 Xcode Canvas 选择四种 `#Preview`；`IdeaSnippet.swift` 也提供结果视图预览。
+- `Text(timerInterval:)` 由系统刷新，无需 App 每秒运行。计时归零和 `staleDate` **不会自动结束活动**；本地示例需要手动结束，没有接入后台推送或服务器。
+
+App 内提供内容预览、生命周期、Widget 布局及 `LiveActivityIntent` 代码。macOS 目录保留说明和代码，实际 ActivityKit 操作在 iOS target 中。
+
+2026-11-02：iOS App + Widget 扩展、macOS target 构建通过；App Intents 元数据包含三个操作，App 包含 `.appex`、`NSSupportsLiveActivities` 和 URL Scheme。改用用户选择的 **iPhone 18 Pro / iOS 27.2** 后，构建、安装和启动成功，通过 Device Hub 手动验证：
+
+- App 内记录灵感后显示累计 1 个；通过系统「快捷指令」运行后，真正的 Snippet 浮层显示累计 2 个、记录时间及系统 Done 按钮。
+- 实时活动开始、加时（目标结束时间从 17:31 变为 17:32）、切后台后的灵动岛紧凑布局、长按展开布局、锁屏卡片和首次系统允许提示。
+- 点击锁屏卡片回到专注页；结束后页面恢复「尚未开始」，返回主屏幕确认灵动岛活动消失。
+- 系统「快捷指令」中的「开始专注倒计时」可以创建新的五分钟活动并打开专注页。
+
+尚未验证 Siri 语音、灵动岛最小布局、Canvas 或真机行为。
+
+| Snippet 系统结果 | Live Activity 系统展示 |
+| --- | --- |
+| [系统结果卡片](Screenshots/snippet-system-iphone.png) · [App 内预览](Screenshots/snippet-preview-iphone.png) | [锁屏](Screenshots/live-activity-lockscreen-iphone.png) · [灵动岛紧凑](Screenshots/live-activity-compact-iphone.png) · [灵动岛展开](Screenshots/live-activity-expanded-iphone.png) |
+
+参考：[Apple · Snippet 实现](https://developer.apple.com/documentation/appintents/displaying-static-and-interactive-snippets)、[Apple · Live Activity 实现](https://developer.apple.com/documentation/activitykit/displaying-live-data-with-live-activities)。
+
 ## 打开和运行
 
 直接用 Xcode 打开 `HIGLab.xcodeproj`，无需先安装依赖或重新生成工程。
@@ -53,7 +94,7 @@ Base / Elevated 是界面呈现层级，与同一界面内部的 primary / secon
 | `HIGLab` | iPhone / iPad | iOS / iPadOS 17 |
 | `HIGLabMac` | Mac | macOS 14 |
 
-选择 Scheme 与设备，然后按 **⌘R**。模拟器不需要配置开发者账号；真机运行需在 Signing & Capabilities 中选择自己的 Team。
+选择 Scheme 与设备，然后按 **⌘R**。模拟器不需要配置开发者账号；真机运行需为 App 与 `HIGLabLiveActivities` 扩展选择同一个 Team，并按需修改这两个 target 的 Bundle ID（扩展须以 App 的 Bundle ID 为前缀）。
 
 ## Gauge 案例
 
@@ -68,7 +109,7 @@ Base / Elevated 是界面呈现层级，与同一界面内部的 primary / secon
 
 `linear` 与 `circular` 仅适用于 watchOS，在 iOS / macOS 上展示明确的平台占位；代码弹窗同样注明平台限制。
 
-Accessory 示例运行在 App 内；本工程未包含 WidgetKit、watchOS、visionOS extension。macOS 评分型指标由 HIG 的 Rating Indicators 单独讨论，留待后续组件加入。
+Gauge Accessory 示例运行在 App 内；WidgetKit 扩展目前仅用于专注实时活动，本工程未包含 watchOS、visionOS extension。macOS 评分型指标由 HIG 的 Rating Indicators 单独讨论，留待后续组件加入。
 
 ## 工程结构与扩展
 
@@ -76,12 +117,16 @@ Accessory 示例运行在 App 内；本工程未包含 WidgetKit、watchOS、vis
 HIGLab/
   HIGLabApp.swift                  App、组件目录、外观和导航
   Components/LabComponents.swift  卡片、标题、代码弹窗
+  AppShortcuts/                  Siri 提示、App Intents、Snippet 结果视图
+  LiveActivities/                倒计时控制页与 ActivityKit 生命周期
   Gauges/
     GaugeStyleExample.swift       系统样式枚举与 Gauge 实例
     GaugeScreen.swift             概览、图鉴、交互控制
     GaugeScenariosView.swift      温度、电量和存储
     GaugeGuidelinesView.swift     HIG 设计要点
     LevelIndicatorsView.swift     macOS / AppKit 案例
+Shared/FocusActivityAttributes.swift  App / Widget 共用的状态与倒计时内容视图
+HIGLabLiveActivities/             Widget 扩展：锁屏、灵动岛与四种 Canvas 预览
 HIGLabUITests/                    数值、代码弹窗和场景交互测试
 project.yml                      XcodeGen 工程定义
 ```

@@ -14,19 +14,37 @@ targets:
   HIGLab:
     type: application
     platform: iOS
-    sources: [HIGLab]
+    sources: [HIGLab, Shared]
+    dependencies:
+      - target: HIGLabLiveActivities
+        embed: true
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.example.higlab
+        INFOPLIST_FILE: HIGLab/Info.plist
         TARGETED_DEVICE_FAMILY: '1,2'
         INFOPLIST_KEY_CFBundleDisplayName: HIG Lab
         INFOPLIST_KEY_UILaunchScreen_Generation: YES
         INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: 'UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight'
         INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone: 'UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight'
+  HIGLabLiveActivities:
+    type: app-extension
+    platform: iOS
+    sources: [HIGLabLiveActivities, Shared]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.example.higlab.liveactivities
+        INFOPLIST_FILE: HIGLabLiveActivities/Info.plist
+        INFOPLIST_KEY_CFBundleDisplayName: HIG Lab Focus
+        TARGETED_DEVICE_FAMILY: '1,2'
+        APPLICATION_EXTENSION_API_ONLY: YES
+        SKIP_INSTALL: YES
   HIGLabMac:
     type: application
     platform: macOS
-    sources: [HIGLab]
+    sources:
+      - path: HIGLab
+        excludes: [Info.plist]
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.example.higlab.mac

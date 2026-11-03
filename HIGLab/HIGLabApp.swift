@@ -59,6 +59,9 @@ enum CatalogPage: Hashable {
     case backgroundColors
     case darkBackgrounds
     case vibrancy
+    case siriTips
+    case snippets
+    case liveActivities
 
     var documentationURL: URL {
         switch self {
@@ -67,6 +70,9 @@ enum CatalogPage: Hashable {
         case .backgroundColors: BackgroundColorsScreen.higURL
         case .darkBackgrounds: DarkBackgroundsScreen.higURL
         case .vibrancy: VibrancyScreen.higURL
+        case .siriTips: SiriTipsScreen.higURL
+        case .snippets: SnippetsScreen.higURL
+        case .liveActivities: LiveActivitiesScreen.higURL
         }
     }
 }
@@ -74,6 +80,8 @@ enum CatalogPage: Hashable {
 struct CatalogView: View {
     @State private var selection: CatalogPage? = .gauge(.overview)
     @AppStorage("appearance") private var appearance = "system"
+    @AppStorage("siri-demo-open") private var openSiriDemo = false
+    @AppStorage("live-activity-demo-open") private var openLiveActivityDemo = false
 
     var body: some View {
         NavigationSplitView {
@@ -124,6 +132,23 @@ struct CatalogView: View {
                     }
                     .accessibilityIdentifier("nav-vibrancy")
                 }
+                Section("App Shortcuts · 快捷操作") {
+                    NavigationLink(value: CatalogPage.siriTips) {
+                        Label("Siri 提示卡片", systemImage: "mic.badge.plus")
+                            .padding(.vertical, 5)
+                    }
+                    .accessibilityIdentifier("nav-siri-tips")
+                    NavigationLink(value: CatalogPage.snippets) {
+                        Label("Snippet · 结果卡片", systemImage: "rectangle.bubble")
+                            .padding(.vertical, 5)
+                    }
+                    .accessibilityIdentifier("nav-snippets")
+                    NavigationLink(value: CatalogPage.liveActivities) {
+                        Label("Live Activity · 专注", systemImage: "timer")
+                            .padding(.vertical, 5)
+                    }
+                    .accessibilityIdentifier("nav-live-activities")
+                }
                 Section {
                     Label("更多 HIG 组件，逐步加入", systemImage: "square.stack.3d.up")
                         .font(.caption).foregroundStyle(.secondary)
@@ -152,6 +177,36 @@ struct CatalogView: View {
                 }
         }
         .preferredColorScheme(appearance == "system" ? nil : appearance == "dark" ? .dark : .light)
+        .onChange(of: openSiriDemo) { _, shouldOpen in
+            if shouldOpen {
+                selection = .siriTips
+                openSiriDemo = false
+            }
+        }
+        .onAppear {
+            if openSiriDemo || ProcessInfo.processInfo.arguments.contains("-siri-tip-demo") {
+                selection = .siriTips
+                openSiriDemo = false
+            }
+            if ProcessInfo.processInfo.arguments.contains("-snippets-demo") {
+                selection = .snippets
+            }
+            if openLiveActivityDemo || ProcessInfo.processInfo.arguments.contains("-live-activity-demo") {
+                selection = .liveActivities
+                openLiveActivityDemo = false
+            }
+        }
+        .onChange(of: openLiveActivityDemo) { _, shouldOpen in
+            if shouldOpen {
+                selection = .liveActivities
+                openLiveActivityDemo = false
+            }
+        }
+        .onOpenURL { url in
+            if url.scheme == "higlab", url.host == "live-activity" {
+                selection = .liveActivities
+            }
+        }
     }
 
     @ViewBuilder private var detail: some View {
@@ -161,6 +216,9 @@ struct CatalogView: View {
         case .backgroundColors: BackgroundColorsScreen()
         case .darkBackgrounds: DarkBackgroundsScreen()
         case .vibrancy: VibrancyScreen()
+        case .siriTips: SiriTipsScreen()
+        case .snippets: SnippetsScreen()
+        case .liveActivities: LiveActivitiesScreen()
         }
     }
 }
